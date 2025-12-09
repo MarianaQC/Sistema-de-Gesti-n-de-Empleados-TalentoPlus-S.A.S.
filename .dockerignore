@@ -1,0 +1,40 @@
+# Build results
+**/bin/
+**/obj/
+**/out/
+
+# Tests
+**/tests/
+**/*.Tests/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Environment
+.env
+.env.local
+
+# Logs
+**/logs/
+**/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker
+docker-compose*.yml
+Dockerfile
+.dockerignore
+
+# Temp files
+**/temp/
+**/uploads/

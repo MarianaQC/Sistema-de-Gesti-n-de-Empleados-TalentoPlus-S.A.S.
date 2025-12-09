@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/TalentoPlus.Api.props" />
-</Project>

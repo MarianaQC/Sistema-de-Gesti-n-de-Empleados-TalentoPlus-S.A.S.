@@ -1,0 +1,32 @@
+services:
+  # Servicio 1: Base de Datos MySQL
+  mysql_db:
+    image: mysql:8.0
+    container_name: talentoplus_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # Servicio 2: API ASP.NET Core
+  talentoplus_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: talentoplus_api_container
+    restart: always
+    env_file:
+      - .env 
+    ports:
+      - "5162:80"
+    depends_on:
+      - mysql_db
+
+volumes:
+  mysql_data:
